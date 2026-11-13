@@ -1,0 +1,19 @@
+{
+  "name": "sistema-estadias",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sistema Integral de Administración, Revisión y Seguimiento de Documentos de Estadía",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=apps/web",
+    "start": "npm run start --workspace=apps/api"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
